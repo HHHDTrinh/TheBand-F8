@@ -1,0 +1,599 @@
+/* Common */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;;
+}
+
+html{
+    font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.fs-15{
+    font-size: 15px;
+}
+
+.bc-black{
+    background-color: #000 !important;
+}
+
+.bc-red{
+    background-color: #f44336!important;
+}
+
+.bc-white{
+    background-color: #fff !important;
+}
+
+.text-black{
+    color: #000 !important;
+}
+
+.text-white{
+    color: white !important;
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+.ptb-64{
+   padding-top: 64px;
+   padding-bottom: 64px;
+}
+
+.ptb-32{
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.ptb-16{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.p-16{
+    padding: 16px;
+}
+
+.plr-16{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.pt-16{
+    padding-top: 16px;
+}
+
+.mtb-8{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.mt-16{
+    margin-top: 16px;
+}
+
+.mtb-16{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.mtb-12{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+/* Main */
+#header{
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 47px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.left-header{
+    display: inline-block;
+}
+
+.left-header, .submenu-left{
+    list-style-type:  none;
+}
+
+.left-header > li{
+    display: inline-block;
+}
+
+.left-header li{
+    font-size: 15px;
+    position: relative;
+}
+
+.left-header > li > a{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.left-header li a{
+    line-height: 47px;
+    text-decoration: none;
+    padding: 0 15px;
+    display: block;
+}
+
+.left-header > li:hover > a,
+.left-header .submenu-left li:hover a{
+    background-color: #ccc;
+    color: #000;
+}
+
+/* Nếu .left-header li a muốn display là inline-block thì t có thể sử dụng tuyệt đối ">" .left-header > li:hover > .submenu-left */
+/* So sánh với các bài theband khác */
+.left-header li:hover .submenu-left{
+    display: block;
+}
+
+.left-header .submenu-left{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px #000;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+}
+
+.left-header .submenu-left a{
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+.left-header .left-header-ic{
+    font-size: 12px;
+}
+
+.right-header,
+.right-mobile{
+    float: right;
+    padding: 0 18px;
+}
+
+.right-header:hover{
+    background-color: #f44336;
+}
+
+.right-mobile{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+.right-mobile:hover{
+    background-color: #ddd;
+}
+
+.right-mobile:hover .right-mobile__ic{
+    color: #000;
+}
+
+.right-mobile .right-mobile__ic,
+.right-header .right-header-ic{
+    font-size: 20px;
+    color: #fff;
+    line-height: 47px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#slider{
+    position: relative;
+    margin-top: 47px;
+    background: url('../images/slider-img/chicago.jpg') top center / cover no-repeat;
+    padding-top: 50%;
+}
+
+#slider .slider-content{
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    padding: 32px 16px;
+    line-height: 1.5;
+    bottom: 0;
+    width: 100%;
+}
+
+#slider .slider-name{
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#slider .silder-detail{
+    margin: 15px 0;
+    font-weight: bolder;
+    font-size: 15px;
+    text-shadow: 0  0  5px  #000;
+}
+
+
+#content{
+
+}
+
+#content .content-wrapper{
+    font-size: 15px;
+    line-height: 1.5;
+    width: 800px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#content .band-name{
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-size: 30px;
+}
+
+#content .band-slogan{
+    font-style: italic;
+    opacity: 0.6;
+}
+
+#content .band-dscription{
+    text-align: justify;
+}
+
+#content .member-img{
+    width: 60%;
+    border-radius: 4px;
+}
+
+#content .tickets-month{
+    border-bottom: 1px solid #ddd;
+    padding: 8px 16px;
+    color: #757575;
+    list-style-type: none;
+}
+
+#content .tickets-sd{
+    margin-left: 16px;
+    padding: 4px 8px;
+}
+
+#content .tickets-badge{
+    float: right;
+    /* Chỉnh độ tròn */
+    border-radius: 50%;
+    /* Độ dài vào rộng của hình tròn */
+    width: 25px;
+    height: 25px;
+    /* Điều chỉnh để text nằm giữa hình tròn
+        Không hiểu thì, mở dev tools và tắt padding*/
+    padding: 2px;
+    text-align: center;
+}
+
+#content .tickets-img{
+    width: 100%;
+    display: block;
+    opacity: 1;
+}
+
+#content .tickets-img:hover{
+    opacity: 0.6;
+}
+
+#content .tickets-place{
+    font-weight: 700;
+}
+
+#content .tickets-time{
+    opacity: 0.6;
+}
+
+#content .tickets-btn{
+    border: none;
+    padding: 11px 16px;
+    font-size: 15px;
+}
+
+#content .tickets-btn:hover{
+    background-color: #ccc !important;
+    color: #000 !important;
+    cursor: pointer;
+}
+
+#content .left__detail p{
+    font-size: 18px;
+}
+
+#content .left__detail-ic{
+    width: 30px;
+    display: inline-block;
+}
+
+#content .left__detail a{
+    color: #2020f0;
+    opacity: 0.8;
+}
+
+#content .left__detail a:hover{
+    opacity: 1;
+}
+
+#content .right__detail{
+    font-size: 15px;
+}
+
+#content .right__form-input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+#content .right__form-btn{
+    float: right;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+#content .right__form-btn:hover{
+    background-color: #ccc !important;
+    color: #000 !important;
+}
+
+#content .contact-img{
+    width: 100%;
+}
+
+#content .contact__img-map{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    filter: grayscale(50%);
+}
+
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-ic{
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+#footer .social-ic:hover,
+#footer .social-cpr a:hover{
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+#footer .social-cpr{
+    font-size: 15px;
+    color: #000;
+}
+
+#footer .social-cpr a{
+    color: #000;
+    opacity: 0.8;
+}
+
+/* Modal */
+.modal.modal-open{
+    display: flex;
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__container{
+    background-color: #fff;
+    width: 900px;
+    min-height: 200px;
+    max-width: calc(100% - 36px);
+    animation: modalFadeIn ease .5s;
+}
+
+.modal__head{
+    color: #fff;
+    font-size: 30px;
+    background-color: #009688;
+    padding: 32px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    line-height: 1.5;
+    position: relative;
+}
+
+.modal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 15px;
+    padding: 12px 16px;
+}
+
+.modal__head-name{
+    letter-spacing: 4px;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.modal__body{
+    font-size: 15px;
+}
+
+input.modal__body-input{
+    padding: 8px;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+button.modal__body-btn{
+    width: 100%;
+    background-color: #009688;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.modal-close:hover,
+button.modal__body-btn:hover{
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
+.modal__footer{
+    float: right;
+    margin: 32px 0;
+    font-size: 15px;
+}
+
+.modal__footer-link{
+    color: #009688;
+    opacity: 1;
+}
+
+.modal__footer-link:hover{
+    opacity: 0.6;
+}
+
+@keyframes modalFadeIn {
+    from{
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Responsive */
+/* PC */
+@media screen and (min-width: 64em) {
+    
+}
+
+/* Tablet & Phone */
+@media screen and (max-width: 63.9375em) {
+    #content .right__form-input{
+        padding: 13px;
+        font-size: 16px;
+    }
+
+    #content .right__form-btn,
+    #content .tickets-btn{
+        padding: 15px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    #content .left__detail {
+        line-height: 2;
+    }
+
+    #footer .social-ic{
+        font-size: 30px;
+        margin: 0 8px;
+    }
+
+    #footer .social-cpr a{
+        padding: 16px 0;
+        font-size: 20px;
+            display: inline-block;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .left-header .submenu-left a{
+        padding: 5px 12px;
+    }
+}
+/* Phone */
+@media screen and (max-width: 46.1875em) {
+    .s-full-width{
+        width: 100%;
+    }
+
+    .s-mt-8{
+        margin-top: 8px;
+    }
+
+    #header{
+        overflow: hidden;
+    }
+
+    .left-header{
+        display: block;
+    }
+
+    .left-header > li{
+        display: block;
+    }
+    
+    .left-header > li:first-child{
+        display: inline-block;
+    }
+    
+    .left-header li a{
+        padding: 1px 15px;
+    }
+
+    .left-header .submenu-left{
+        position: initial;
+        background-color: #333;
+    }
+
+    .left-header .submenu-left a{
+        color: #fff;
+        padding: 5px 31px;
+    }
+
+    .right-header{
+        display: none;
+    }
+    
+    .right-mobile{
+        display: block;
+    }
+
+    #content .right__detail{
+        margin-top: 32px;
+    }
+
+}
